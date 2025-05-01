@@ -7,6 +7,9 @@ import lombok.Setter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 교수 엔티티
+ */
 @Entity
 @Getter @Setter
 public class Professor {

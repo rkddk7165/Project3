@@ -6,6 +6,10 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
+/**
+ * 과제 제출 엔티티
+ * 현재 세션에 있는 학생 id를 가져와 제출 구현.
+ */
 @Entity
 @Getter @Setter
 public class AssignmentSubmission {
@@ -25,12 +29,17 @@ public class AssignmentSubmission {
     private String content;
     private String title;
 
+    /// ////////////////////////////////
     private String file_path;
     private String file_name;
     private String file_type;
+    /// ///////////////////////////////
+
 
     private int grade;
     private String feedback;
 
     private LocalDateTime submitted_time;
+
+    //createAssignmentSubmission 함수 구현
 }

@@ -6,6 +6,10 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
+/**
+ * 해당 엔티티는 과제 제출 파일이 여러개 일때를 대비해 설계
+ * 만약 과제 제출 파일이 여러개라면 해당 엔티티 사용
+ */
 @Entity
 @Getter @Setter
 public class AssignmentFile {
