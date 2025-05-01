@@ -1,6 +1,5 @@
 package Project3.LMS.domain;
 
-import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,7 +7,6 @@ import lombok.Setter;
 @Getter @Setter
 public class Syllabus {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "syllabus_id")
     private Long id;
 
