@@ -1,4 +1,4 @@
-package Project3.LMS;
+package Project3.LMS.domain;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -10,7 +10,7 @@ import static jakarta.persistence.FetchType.*;
 @Getter @Setter
 public class Timetable {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "time_table_id")
     private Long id;
 

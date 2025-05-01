@@ -1,4 +1,4 @@
-package Project3.LMS;
+package Project3.LMS.domain;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -11,6 +11,7 @@ import java.util.List;
 @Getter @Setter
 public class Professor {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "professor_id")
     private Long id;
 
