@@ -1,4 +1,4 @@
-package Project3.LMS;
+package Project3.LMS.domain;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,9 +9,9 @@ import lombok.Setter;
 
 @Entity
 @Getter @Setter
-public class AssignmentSubmission {
+public class Notice {
     @Id
     @GeneratedValue
-    @Column(name = "submission_id")
-    private long id;
+    @Column(name = "notice_id")
+    private Long id;
 }
