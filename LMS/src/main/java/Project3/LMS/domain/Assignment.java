@@ -5,6 +5,10 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
+/**
+ * 과제 출제 엔티티
+ *
+ */
 @Entity
 @Getter @Setter
 public class Assignment {
@@ -31,4 +35,10 @@ public class Assignment {
     private LocalDateTime due_date;
     private LocalDateTime created_time;
     private LocalDateTime updated_time;
+
+    /**
+     *     createAssignment() 함수 구현
+     *     연관관계 주의하여 교수와 과목 Listd에 정확히 넣을것
+     */
+
 }

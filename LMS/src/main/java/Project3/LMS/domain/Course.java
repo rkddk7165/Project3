@@ -7,6 +7,10 @@ import lombok.Setter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 과목 엔티티
+ *
+ */
 @Entity
 @Getter @Setter
 @Table(name = "course")
@@ -37,4 +41,10 @@ public class Course {
 
     @OneToMany(mappedBy = "course")
     private List<Notice> notices = new ArrayList<>();
+
+    /**
+     *     createCourse 함수 구현
+     *     양방향 연관관계에 대해 설정
+     *     ex)professor.getCourses().add(course)
+     */
 }

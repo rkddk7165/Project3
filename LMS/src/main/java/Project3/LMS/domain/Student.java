@@ -7,6 +7,10 @@ import lombok.Setter;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 기능:
+ * 수강신청 list에서 course를 가져와 메인 화면에 시간표 출력
+ */
 @Entity
 @Getter @Setter
 public class Student {

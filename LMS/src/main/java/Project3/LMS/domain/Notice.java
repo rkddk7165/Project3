@@ -5,6 +5,11 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 
+/**
+ * 공지사항
+ * 교수가 과목 공지사항 작성 가능
+ * Admin이 klas 전체 공지사항 작성 가능
+ */
 @Entity
 @Getter @Setter
 public class Notice {
@@ -34,4 +39,9 @@ public class Notice {
     private String content;
 
     private LocalDateTime date;
+
+    /**
+     * createByProfessor() 구현
+     * createByAdmin() 구현
+     */
 }

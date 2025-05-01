@@ -3,6 +3,9 @@ package Project3.LMS.domain;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * 강의계획서 엔티티
+ */
 @Entity
 @Getter @Setter
 public class Syllabus {
