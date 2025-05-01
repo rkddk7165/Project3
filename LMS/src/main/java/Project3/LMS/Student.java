@@ -1,0 +1,31 @@
+package Project3.LMS;
+
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
+@Getter @Setter
+public class Student {
+    @Id @GeneratedValue
+    @Column(name = "student_id")
+    private Long id;
+
+    private String name;
+    private String email;
+    private String department;
+    private String password;
+    private String phoneNumber;
+
+    @OneToMany(mappedBy = "student")
+    private List<Timetable> timetables= new ArrayList<>();
+
+    @OneToMany(mappedBy = "student")
+    private List<Enrollment> enrollments = new ArrayList<>();
+
+    @OneToMany(mappedBy = "student")
+    private List<AssignmentSubmission> assignmentSubmissions = new ArrayList<>();
+}
