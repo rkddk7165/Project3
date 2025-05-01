@@ -1,11 +1,9 @@
-package Project3.LMS;
+package Project3.LMS.domain;
 
 import jakarta.persistence.*;
-import jakarta.websocket.server.ServerEndpoint;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.beans.ConstructorProperties;
 import java.time.LocalDate;
 
 @Entity
