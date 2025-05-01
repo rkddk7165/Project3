@@ -1,9 +1,5 @@
 package Project3.LMS.domain;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,7 +7,12 @@ import lombok.Setter;
 @Getter @Setter
 public class Syllabus {
     @Id
-    @GeneratedValue
     @Column(name = "syllabus_id")
     private Long id;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "course_id")
+    private Course course;
+
+    private String content;
 }

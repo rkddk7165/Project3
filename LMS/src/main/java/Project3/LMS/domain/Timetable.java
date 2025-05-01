@@ -10,7 +10,7 @@ import static jakarta.persistence.FetchType.*;
 @Getter @Setter
 public class Timetable {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "time_table_id")
     private Long id;
 

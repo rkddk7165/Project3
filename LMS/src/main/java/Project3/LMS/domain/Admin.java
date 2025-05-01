@@ -11,10 +11,11 @@ import java.util.List;
 @Getter @Setter
 public class Admin {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "admin_id")
     private Long id;
 
+    @Column(nullable = false)
     private String name;
     private String email;
     private String password;

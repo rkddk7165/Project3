@@ -10,16 +10,16 @@ import java.time.LocalDate;
 @Getter @Setter
 public class Enrollment {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "enrollment_id")
     private long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "student_id")
     private Student student;
 
-    @ManyToOne
-    @JoinColumn(name = "course_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "course_id",nullable = false)//과목에 전담 교수 필요
     private Course course;
 
     private LocalDate enrollmentDate;

@@ -9,17 +9,18 @@ import java.util.List;
 
 @Entity
 @Getter @Setter
+@Table(name = "course")
 public class Course {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "course_id")
     private Long id;
 
     private String courseName;
     private int credits;
 
-    @ManyToOne
-    @JoinColumn(name = "professor_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "professor_id",nullable = false)
     private Professor professor;
 
     @OneToOne(mappedBy = "course", cascade = CascadeType.ALL)
@@ -31,7 +32,7 @@ public class Course {
     @OneToMany(mappedBy = "course")
     private List<Enrollment> enrollments = new ArrayList<>();
 
-    @OneToMany(mappedBy = "course")
+    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Assignment> assignments = new ArrayList<>();
 
     @OneToMany(mappedBy = "course")
