@@ -79,8 +79,9 @@ public class Course {
     /**
      *     생성 메소드
      */
+
     public static Course createCourse(String courseName, int credits, Professor professor) {
-        Course course = new Course();
+        Course course = new Project3.LMS.domain.Course();
         course.setCourseName(courseName);
         course.setCredits(credits);
         course.setProfessor(professor);
