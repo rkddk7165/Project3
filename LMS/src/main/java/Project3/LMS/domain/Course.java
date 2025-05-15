@@ -28,6 +28,7 @@ public class Course {
     private Professor professor;
 
     @OneToOne(mappedBy = "course", cascade = CascadeType.ALL, orphanRemoval = true)
+
     private Syllabus syllabus;
 
     @OneToMany(mappedBy = "course", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -41,6 +42,10 @@ public class Course {
 
     @OneToMany(mappedBy = "course", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Assignment> assignments = new ArrayList<>();
+
+
+    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List <OnlineLecture> onlineLectures = new ArrayList<>();
 
     /**
      *     연관관계 메소드
@@ -75,10 +80,16 @@ public class Course {
         notice.setCourse(this);
     }
 
+    public void addOnlineLecture(OnlineLecture onlineLecture) {
+        onlineLectures.add(onlineLecture);
+        onlineLecture.setCourse(this);
+
+    }
+
+
     /**
      *     생성 메소드
      */
-
     public static Course createCourse(String courseName, int credits, Professor professor) {
         Course course = new Course();
         course.setCourseName(courseName);
@@ -88,6 +99,5 @@ public class Course {
         return course;
 
     }
-
-
 }
+
